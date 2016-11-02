@@ -1,0 +1,54 @@
+<!doctype html><!-- #if (false) --> <html> <head> <meta charset="utf-8"> <style>@font-face {  font-family: 'Bebas';  src: url("fonts/bebas/BebasNeueRegular.eot");
+    src: url("fonts/bebas/BebasNeueRegular.eot?#iefix") format("embedded-opentype"), url("fonts/bebas/BebasNeueRegular.woff") format("woff"), url("fonts/bebas/BebasNeueRegular.ttf") format("truetype"), url("fonts/bebas/BebasNeueRegular.svg#webfont") format("svg");
+  }@font-face {  font-family: 'dosis';  src: url("fonts/dosis/dosis-medium-webfont.eot");
+    src: url("fonts/dosis/dosis-medium-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/dosis/dosis-medium-webfont.woff") format("woff"), url("fonts/dosis/dosis-medium-webfont.ttf") format("truetype"), url("fonts/dosis/dosis-medium-webfont.svg#webfont") format("svg");
+  }</style> <title>Navigation</title> <meta name="description" content=""> <!-- #end --> <!-- #if ($importType == "header") --> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="../../../BIPriv_LOCAL/css/vendor.c2eec831.css"> <link rel="stylesheet" href="../../../BIPriv_LOCAL/css/main.9196c181.css"> <script>var isMobile = false;</script> <!-- #else --> <!-- #end --> <!-- #if (false) --> </head> <body> <!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]--> <!-- Add your site or application content here --> <!-- #else --> <!-- #end --> <!--  #if ($importType =="body") --> <script src="../../../BIPriv_LOCAL/js/vendor.c20cb97e.js"></script> <script src="https://npmcdn.com/@angular/router@0.2.0/angular1/angular_1_router.js"></script> <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script> <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script> <script src="../../../BIPriv_LOCAL/js/scripts.ed82564a.js"></script> <!-- Bootstrap Angular --> <!--ServerSide:Velocity:retreive_UserInformation
+#set($userLocalService = $serviceLocator.findService('com.liferay.portal.service.UserLocalService'))
+#set ($userId = $getterUtil.getLong($request.get("theme-display").get("user-id")))
+--> <div id="bunkerapp"> <app></app> </div> <script type="application/javascript">angular.element(document).ready(function() {
+      if (typeof(AUI) !== 'undefined'){
+        console.log ("AUI exist");
+
+        AUI().ready('aui-io',function(){
+            console.log ("AUI ready");
+            console.log("auth token ->" +Liferay.authToken);
+            var userId = "${userId}";
+
+            angular.bootstrap(document.getElementById("bunkerapp"), ['bunkerApp']);
+          }
+        );
+      }else{
+
+        angular.bootstrap(document.getElementById("bunkerapp"), ['bunkerApp']);
+      };
+
+    }
+  );
+
+  //                    startAngular(Liferay,userId);
+  //                });
+  //            }else{
+  //            	angular.bootstrap(MainAppDiv, ["bunkerApp"]);
+  //            }
+  //            function startAngular(Liferay,userId) {
+  //              /**  var siteConfig = {
+  //                    ajaxUrl: 0,
+  //                    isStandalone: 0,
+  //                    tokenId: Liferay.authToken,
+  //                    authenticatedUser: userId,
+  //                    screenSize: 0,
+  //                    viewMode: 0,
+  //                    liferayObj : Liferay
+  //                };
+  //              */
+  //                //var app = angular.module('bunkerapp');
+  //                //app.constant('siteConfig', siteConfig);
+  //                angular.bootstrap(MainAppDiv, ["bunkerApp"]);
+  //            }
+  //        })();
+  //	 angular.bootstrap(MainAppDiv, ["bunkerApp"]);
+
+
+  // });</script> <!-- #else --> <!-- #end --> <!-- #if (false) --> </body> </html> <!-- #else --> <!-- #end -->
